@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <math.h>
 #include "Header_Hilfekatalog.h"
 #include "Header_Gaussfunktionen.h"
 
@@ -21,20 +22,36 @@ int main(int argc,char *argv[])
 {
         char *vvalue = NULL;
         int option;
+	float expected_value = 1000.0;
+	float std_deviation = 10.0;
+	int amount_of_values = 100;
+	int Programmstart = 0;			//prüft ob: e, s & n eingegeben!
         opterr = 0;
 
 
 
-        while ((option = getopt(argc, argv, "e:hv")) != -1)
+        while ((option = getopt(argc, argv, "e:hn:s:v")) != -1)
         switch (option)
         {
+		//void print_gaussian_dist ( float expected_value, float std_deviation , int amount_of_values, FILE ∗ output_stream)
                 // -h (help):
                 case 'h':
                         Header_Hilfekatalog();
                         break;
-                // -e Eingabe -> Echo
+                // -e Liest Erwartungswert ein (float)
                 case 'e':
-                        printf("%s \n", optarg);
+                        expected_value = atof(optarg);
+			Programmstart ++;
+                        break;
+		// -s Liest Standartabhweichung ein (float)
+                case 's':
+                        std_deviation = atof(optarg);
+			Programmstart ++;
+                        break;
+		// -n Liest Anzahl der Werte ein (int)
+                case 'n':
+                        amount_of_values = atoi(optarg);
+			Programmstart ++;
                         break;
                 // -v Version
                 case 'v':
@@ -44,7 +61,15 @@ int main(int argc,char *argv[])
                 case '?':
                         if (optopt == 'e')
                         {
-                                fprintf (stderr, "This is not 'Nam, this is programming. There are rules! -%c requires an argument.\n", optopt);
+                                fprintf (stderr, "There are rules! -%c requires an argument! \n", optopt);
+                        }
+			else if (optopt == 's')
+                        {
+                                fprintf (stderr, "There are rules! -%c requires an argument! \n", optopt);
+                        }
+			else if (optopt == 'n')
+                        {
+                                fprintf (stderr, "There are rules! -%c requires an argument! \n", optopt);
                         }
                         else if (isprint (optopt))//is character printable
                         {
@@ -59,6 +84,15 @@ int main(int argc,char *argv[])
                 default:
                 abort ();
         }
+
+	if (Programmstart == 3) {
+		printf("\n\n... starting algorithm ... \n");
+		print_gaussian_dist ( expected_value, std_deviation, amount_of_values );
+		}
+	else	{
+		printf("\n\nto start algorithm: enter an expected value, a standart deviation and an amount of values:\n");
+		printf("-e [expected value] -s [standart deviation] -n [amount of values]\n\n");
+		}
 
 
 
