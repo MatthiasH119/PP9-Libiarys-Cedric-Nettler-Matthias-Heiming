@@ -1,5 +1,5 @@
-//      Autor:          Cedric-Julian Nettler		|	Matthias Heiming
-//      Mail:           				|	matthias.heiming@stud.thga.de
+//      Autor:          Cedric-Julian Nettler			|	Matthias Heiming
+//      Mail:           cedric-julian.nettler@stud.thga.de	|	matthias.heiming@stud.thga.de
 //      Datum:          25.06.2022
 //
 //      Praktikum:	PP9, Header Only Libiary Aufgabe
@@ -81,7 +81,7 @@ int main(int argc,char *argv[])
                         }
                         Header_Hilfekatalog();
                         return 1;
-                default:
+		default:
                 abort ();
         }
 
