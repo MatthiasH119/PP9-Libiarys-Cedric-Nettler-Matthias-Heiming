@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 
 void print_gaussian_dist ( float expected_value, float std_deviation , int amount_of_values ) {
 	// Ausgeben der übergebenben Variablen
@@ -10,7 +11,7 @@ void print_gaussian_dist ( float expected_value, float std_deviation , int amoun
 	//prüfen, ob min 100 Werte ausgegeben werden sollen
 	if (amount_of_values < 100) {
 		printf("please ask for at least 100 values !");
-		exit;
+		//exit; 
 		}
 
 	// Deklarationen
