@@ -4,11 +4,28 @@ void Header_Hilfekatalog()
         printf("=====================================================================================");
         printf("\n");
 
-        printf("-e [text] für ein Echo \n");
-        printf("-h für Hilfe \n");
-        printf("-v für Version");
+	printf("standard commands:");
+        printf("-h help \n");
+        printf("-v version");
 
         printf("\n");
+        printf("=====================================================================================");
+        printf("\n");
+
+	printf("to properly start the application, use all of the following option switches \n");
+	printf("-e [expected_value] \n");
+	printf("-s [standard_deviation] \n");
+	printf("-n [amount_of_values] ");
+
+	printf("\n");
+        printf("=====================================================================================");
+        printf("\n");
+
+	printf("use the following command to get a good example of a propper looking result \n");
+	printf("(or use: 'make execute_gaussian_application') \n");
+	printf("./Programm_Gaussverteilung.elf -e 150 -s 10 -n 1200");
+	
+	printf("\n");
         printf("=====================================================================================");
         printf("\n");
 }

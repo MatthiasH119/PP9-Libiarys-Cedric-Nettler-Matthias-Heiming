@@ -92,6 +92,7 @@ int main(int argc,char *argv[])
 	else	{
 		printf("\n\nto start algorithm: enter an expected value, a standart deviation and an amount of values:\n");
 		printf("-e [expected value] -s [standart deviation] -n [amount of values]\n\n");
+		printf("enter -h for further information \n");
 		}
 
 
