@@ -6,3 +6,6 @@ application_staticlib:
 	ar -crs lib_static_gaussian.a static_gaussian.o
 	sudo cp static_gaussian.h /usr/include
 	sudo cp lib_static_gaussian.a /usr/lib
+
+get_instream_data:
+	cat ~/.ssh/PP9/PP9-Libiarys-Cedric-Nettler-Matthias-Heiming/HEADER_Only_Libiary/outstream.txt
