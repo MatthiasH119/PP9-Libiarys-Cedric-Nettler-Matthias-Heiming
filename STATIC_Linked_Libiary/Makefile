@@ -6,3 +6,4 @@ application_staticlib:
 	ar -crs lib_static_gaussian.a static_gaussian.o
 	sudo cp static_gaussian.h /usr/include
 	sudo cp lib_static_gaussian.a /usr/lib
+

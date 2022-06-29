@@ -10,11 +10,11 @@ int main(){
 
         int i;
 	
-        for(i = 0; i < 100; i++){
+        for (i = 0; i < 100; i++){
                 printf("%d\n",rand());
         }
 
-        return 0;
+        exit(EXIT_SUCCESS);
 }
 
 */
