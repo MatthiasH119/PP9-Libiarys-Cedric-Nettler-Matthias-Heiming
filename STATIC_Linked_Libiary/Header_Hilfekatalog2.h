@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void Header_Hilfekatalog()
 {
         printf("\n");
