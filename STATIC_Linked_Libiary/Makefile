@@ -1,4 +1,4 @@
-application_main_static_a-2: application_staticlib
+application_main_static_a-2: application_staticlib instream_random_generator
 	gcc -o main_aufgabe-2.elf main_aufgabe-2.c -l_static_gaussian
 
 application_staticlib:
@@ -7,3 +7,5 @@ application_staticlib:
 	sudo cp static_gaussian.h /usr/include
 	sudo cp lib_static_gaussian.a /usr/lib
 
+instream_random_generator:
+	gcc instream_random_generator.c
