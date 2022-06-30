@@ -12,7 +12,7 @@
 #include "Header_Hilfekatalog2.h"
 #include <static_gaussian.h>
 
-char version[]="V00.1";
+char version[]="V00.2";
 
 int main(int argc,char *argv[])
 {
