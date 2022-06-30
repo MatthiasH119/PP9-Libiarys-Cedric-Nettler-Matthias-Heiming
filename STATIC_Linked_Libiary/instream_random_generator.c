@@ -20,19 +20,29 @@ int main(){
 */
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <unistd.h>
+#include <math.h>
+#include <string.h>
 #include <time.h>
 
 #define MAX 500
 #define SIZE 100
 #define NUMS_TO_GENERATE 100
 
+
 int main() {
+
+	FILE * outstream;
+	outstream = stdout;
+
     srand(time(NULL));
     for (int i = 0; i < NUMS_TO_GENERATE; i++){
         printf("%d\n", rand() % MAX);
     }
+
+    fclose(outstream);
 
     exit(EXIT_SUCCESS);
 }	
