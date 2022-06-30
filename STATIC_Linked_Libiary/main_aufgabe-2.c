@@ -18,7 +18,6 @@ int main(int argc,char *argv[])
 {
         char *vvalue = NULL;
         int option;
-        int Programmstart = 0;
 	float expected_value = 0.0;
 	float std_deviation = 0.0;
         opterr = 0;
@@ -62,26 +61,14 @@ int main(int argc,char *argv[])
                 abort ();
         }
 
-/*	if (Programmstart == 3) {
-                printf("\n\n... starting application ... \n");
-                print_gaussian_dist ( expected_value, std_deviation, amount_of_values, instream );
-                }
-        else    {
-                printf("\n\nto start algorithm: enter an expected value, a standart deviation and an amount of values:\n");
-                printf("-e [expected value] -s [standart deviation] -n [amount of values]\n\n");
-                printf("enter -h for further information \n");
-                }	
-
-	if (instream == abc)
-		instream = fopen("instream.txt", "r");		*/
-
 	if (instream == NULL) // test for files not existing.
             		{
               		printf("Error! Datei nicht gefunden\n");
               		exit(-1);
                     }
 	
-//	void static_gaussian (instream);
+	//Programmaufruf
+	static_gaussian (instream);
 	
 	fclose(instream);
 
