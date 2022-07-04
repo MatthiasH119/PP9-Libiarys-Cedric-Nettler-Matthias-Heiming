@@ -8,7 +8,7 @@ Dieses Programm erstellt 100 Zufallszahlen, welche in einer Datei mit dem Namen 
 
 Anschließend werden diese Zufallszahlen in das Programm "main_aufgabe-2.c" übergeben und zusammen mit den Header files kompiliert.
 
-Sie erhalten nun eine expected value und eine "expected value" und und eine "standart deviation" dieser Zufallszahlen.
+Sie erhalten nun eine "expected value" und und eine "standart deviation" dieser Zufallszahlen.
 
 Wir hoffen, unser Programm gefällt ihnen.
 
