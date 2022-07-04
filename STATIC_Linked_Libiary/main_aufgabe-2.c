@@ -12,20 +12,18 @@
 #include "Header_Hilfekatalog2.h"
 #include <static_gaussian.h>
 
-char version[]="V00.2";
+char version[]="V00.3";
 
 int main(int argc,char *argv[])
 {
         char *vvalue = NULL;
         int option;
-	float expected_value = 0.0;
-	float std_deviation = 0.0;
+	int start_application = 0;
         opterr = 0;
 
 	FILE * instream;
-	instream = fopen("instream.txt", "r");
 
-        while ((option = getopt(argc, argv, "i:hv")) != -1)
+        while ((option = getopt(argc, argv, "hsv")) != -1)
         switch (option)
         {
                 //void print_gaussian_dist ( float expected_value, float std_deviation , int amount_of_values, FILE ∗ output_stream)
@@ -33,9 +31,9 @@ int main(int argc,char *argv[])
                 case 'h':
                         Header_Hilfekatalog();
                         break;
-		// -e Liest Erwartungswert ein (float)
-                case 'i':
-                        instream = fopen(optarg, "r");
+		// -s Starte Programm ...
+		case 's':
+                        start_application = 1;
                         break;
 		// -v Version
                 case 'v':
@@ -43,11 +41,7 @@ int main(int argc,char *argv[])
                         break;
                 //optional error handling
                 case '?':
-                        if (optopt == 'i')
-                        {
-                                fprintf (stderr, "There are rules! -%c requires an argument! \n", optopt);
-                        }
-                        else if (isprint (optopt))//is character printable
+                        if (isprint (optopt))//is character printable
                         {
                                 fprintf (stderr, "Unknown option `-%c'.\n", optopt);
                         }
@@ -61,16 +55,23 @@ int main(int argc,char *argv[])
                 abort ();
         }
 
-	if (instream == NULL) // test for files not existing.
-            		{
-              		printf("Error! Datei nicht gefunden\n");
-              		exit(-1);
-                    }
-	
+
 	//Programmaufruf
-	static_gaussian (instream);
-	
-	fclose(instream);
+	if (start_application == 1) {
+		printf("\n... starting application ...\n");
+		instream = fopen("instream.txt", "r");
+		
+		//error handling: test for file not existing
+        	if (instream == NULL)
+                        {
+                        printf("Error! Datei nicht gefunden\n");
+                        exit(1);
+                    }
+		else
+			static_gaussian_calculation (instream);
+		
+		fclose(instream);
+	}
 
         return 0;
 }
