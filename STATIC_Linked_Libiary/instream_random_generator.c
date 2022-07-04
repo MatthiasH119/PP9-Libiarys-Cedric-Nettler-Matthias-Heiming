@@ -14,15 +14,28 @@
 
 int main() {
 
+	int random_normalverteilt_temp01[NUMS_TO_GENERATE];
+	int random_normalverteilt_temp02[NUMS_TO_GENERATE];
+
 	FILE * outstream;
 	outstream = fopen("instream.txt", "w");
 
-    srand(time(NULL));
-    for (int i = 0; i < NUMS_TO_GENERATE; i++){
-	fprintf(outstream, "%d, ", rand() % MAX);
-    }
+	srand(time(NULL));
+	for (int i = 0; i < NUMS_TO_GENERATE; i++){
+                random_normalverteilt_temp01[i] = rand() % MAX;
+        }
 
-    fclose(outstream);
+	for (int i = 0; i < NUMS_TO_GENERATE; i++){
+                random_normalverteilt_temp02[i] = rand() % MAX;
+        }
 
-    return 0;
+
+
+    	for (int i = 0; i < NUMS_TO_GENERATE; i++){
+		fprintf(outstream, "%d, ", (random_normalverteilt_temp01[i] + random_normalverteilt_temp02[i]));
+    	}
+
+    	fclose(outstream);
+
+    	return 0;
 }	
