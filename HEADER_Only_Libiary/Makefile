@@ -1,3 +1,5 @@
+make: compile_gaussian_application execute_gaussian_application_to_stdout
+
 compile_gaussian_application:
 	gcc -o Programm_Gaussverteilung.elf Programm_Gaussverteilung.c -lm
 
