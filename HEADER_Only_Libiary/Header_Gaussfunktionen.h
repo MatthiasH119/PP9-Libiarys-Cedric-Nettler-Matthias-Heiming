@@ -8,8 +8,8 @@ void print_gaussian_dist ( float expected_value, float std_deviation, int amount
 
     //prüfen, ob min 100 Werte ausgegeben werden sollen
     if (amount_of_values < 100) {
-        printf("please ask for at least 100 values !");
-        exit;
+        printf("\n\n... error ... \nplease ask for at least 100 values !\n\n");
+        exit (1);
     }
 
     // Deklarationen
