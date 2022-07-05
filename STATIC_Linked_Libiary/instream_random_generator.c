@@ -20,6 +20,8 @@ int main() {
 	FILE * outstream;
 	outstream = fopen("instream.txt", "w");
 
+
+	//erstellt zwei Normalverteilte Zahlenreihen
 	srand(time(NULL));
 	for (int i = 0; i < NUMS_TO_GENERATE; i++){
                 random_normalverteilt_temp01[i] = rand() % MAX;
@@ -30,7 +32,7 @@ int main() {
         }
 
 
-
+	//erstellt aus den beiden Normalverteilten Zahlenreihen eine Gaussverteilte und schreibt diese in "instream.txt"
     	for (int i = 0; i < NUMS_TO_GENERATE; i++){
 		fprintf(outstream, "%d, ", (random_normalverteilt_temp01[i] + random_normalverteilt_temp02[i]));
     	}
