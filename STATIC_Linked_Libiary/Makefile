@@ -1,4 +1,4 @@
-make: compile_main_static_a-2 compile_application_staticlib  execute_instream_random_generator compile_instream_random_generator execute_programm
+make: compile_main_static_a-2 compile_application_staticlib compile_instream_random_generator execute_instream_random_generator execute_programm
 
 compile_main_static_a-2:
 	gcc -o main_aufgabe-2.elf main_aufgabe-2.c -l_static_gaussian -lm
